@@ -7,7 +7,7 @@ export default function HomePage() {
 
     <div style={{ padding: '2rem' }}>
       <Header />
-      <Footer />
+      a
     </div>
   )
 }
