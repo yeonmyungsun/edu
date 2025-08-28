@@ -1,0 +1,22 @@
+:root {
+  /* Duration */
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 350ms;
+  --duration-slower: 500ms;
+
+  /* Easing */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Component Transitions */
+  --transition-button: all var(--duration-fast) var(--ease-out);
+  --transition-card: all var(--duration-normal) var(--ease-out);
+  --transition-modal: all var(--duration-normal) var(--ease-spring);
+  --transition-focus: box-shadow var(--duration-fast) var(--ease-out);
+}

@@ -1,0 +1,115 @@
+/* Tailwind base styles - 가장 먼저 */
+@tailwind base;
+
+/* Design tokens - base 다음에 */
+@import '../styles/tokens/color.css';
+@import '../styles/tokens/typography.css';
+@import '../styles/tokens/spacing.css';
+@import '../styles/tokens/shadows.css';
+@import '../styles/tokens/radius.css';
+@import '../styles/tokens/animations.css';
+
+/* Component styles - 토큰 다음에 */
+@import '../styles/tokens/components.css';
+
+/* Tailwind components */
+@tailwind components;
+
+/* Tailwind utilities - 가장 마지막 */
+@tailwind utilities;
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-primary);
+  height: 100%;
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  line-height: var(--leading-normal);
+  font-size: var(--text-base);
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* Selection styles */
+::selection {
+  background-color: var(--color-primary-200);
+  color: var(--color-primary-900);
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-layout-md);
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, var(--color-primary-600), var(--color-secondary-600));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
